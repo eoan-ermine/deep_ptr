@@ -1,5 +1,5 @@
 # deep_ptr
-Deep pointer for C++14 and above
+Deep pointers for C++14 and above
 
 # Usage
 
