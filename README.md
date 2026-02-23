@@ -1,7 +1,7 @@
 # deep_ptr
 Deep pointers for C++14 and above
 
-# Usage
+# Usage ([godbolt](https://godbolt.org/z/77MfnoheE))
 
 ```cpp
 #include <deep_ptr/deep_ptr.hpp>
