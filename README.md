@@ -1,5 +1,7 @@
 # deep_ptr
-Deep pointers for C++14 and above
+[![clang](https://github.com/eoan-ermine/deep_ptr/actions/workflows/clang.yml/badge.svg)](https://github.com/eoan-ermine/deep_ptr/actions/workflows/clang.yml) [![gcc](https://github.com/eoan-ermine/deep_ptr/actions/workflows/gcc.yml/badge.svg)](https://github.com/eoan-ermine/deep_ptr/actions/workflows/gcc.yml) [![msvc](https://github.com/eoan-ermine/deep_ptr/actions/workflows/msvc.yml/badge.svg)](https://github.com/eoan-ermine/deep_ptr/actions/workflows/msvc.yml)
+
+Deep pointers for C++14 and above.
 
 # Usage ([godbolt](https://godbolt.org/z/77MfnoheE))
 
