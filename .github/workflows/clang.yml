@@ -44,3 +44,6 @@ jobs:
 
     - name: Build
       run: cmake --build build -j $(nproc)
+
+    - name: Test
+      run: ctest -C ${{matrix.build_type}} --test-dir build/tests/

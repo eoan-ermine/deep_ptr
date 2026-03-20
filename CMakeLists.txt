@@ -5,6 +5,8 @@ set(CMAKE_CXX_STANDARD 14)
 
 message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
 
+include(cmake/CPM.cmake)
+
 # Define the library target
 add_library(deep_ptr INTERFACE)
 add_library(deep_ptr::deep_ptr ALIAS deep_ptr)
@@ -14,6 +16,7 @@ target_include_directories(deep_ptr INTERFACE
 )
 
 option(deepptr_BUILD_EXAMPLES "Build deep_ptr examples" OFF)
+option(deepptr_BUILD_TESTS "Build deep_ptr tests" ON)
 
 include(CMakePackageConfigHelpers)
 write_basic_package_version_file(
@@ -46,4 +49,8 @@ install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/ DESTINATION include)
 
 if (deepptr_BUILD_EXAMPLES)
 	add_subdirectory(examples)
+endif()
+
+if (deepptr_BUILD_TESTS)
+    add_subdirectory(tests)
 endif()
