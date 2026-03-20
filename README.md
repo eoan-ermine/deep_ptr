@@ -20,7 +20,16 @@ int main() {
   std::cout << a << '\n'; // Output: 5
 }
 ```
+
 # CMake integration
+
+## CMake variables
+
+| Option                                 | Description                                                                                                                   | Default value |
+|----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|---------------|
+| CMAKE_BUILD_TYPE (type: STRING)        | This configures the optimization level for make or ninja builds (possible values: Release, Debug, RelWithDebInfo, MinSizeRel) | ""            |
+| CMAKE_INSTALL_PREFIX (type: PATH)      | Install path prefix                                                                                                           | /usr/local    |
+| deepptr_BUILD_EXAMPLES (type: BOOLEAN) | Build deep_ptr examples                                                                                                       | OFF           |
 
 ## [FetchContent](https://cmake.org/cmake/help/latest/module/FetchContent.html)
 

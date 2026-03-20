@@ -3,6 +3,8 @@ cmake_minimum_required(VERSION 3.16)
 project(deep_ptr VERSION 1.0.0 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 14)
 
+message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
+
 # Define the library target
 add_library(deep_ptr INTERFACE)
 add_library(deep_ptr::deep_ptr ALIAS deep_ptr)
@@ -10,6 +12,8 @@ target_include_directories(deep_ptr INTERFACE
     $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>
 )
+
+option(deepptr_BUILD_EXAMPLES "Build deep_ptr examples" OFF)
 
 include(CMakePackageConfigHelpers)
 write_basic_package_version_file(
@@ -39,3 +43,7 @@ install(FILES "${PROJECT_BINARY_DIR}/deep_ptrConfigVersion.cmake"
               "${PROJECT_BINARY_DIR}/deep_ptrConfig.cmake"
         DESTINATION lib/cmake/deep_ptr)
 install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/ DESTINATION include)
+
+if (deepptr_BUILD_EXAMPLES)
+	add_subdirectory(examples)
+endif()
