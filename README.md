@@ -59,3 +59,21 @@ CPMAddPackage("gh:eoan-ermine/deep_ptr#master")
 
 target_link_libraries(${PROJECT_NAME} PRIVATE deep_ptr::deep_ptr)
 ```
+
+# Contributing
+
+To set up the development environment, run:
+
+```shell
+git clone git@github.com:eoan-ermine/deep_ptr.git
+cd deep_ptr
+pip install pre-commit
+pre-commit install
+```
+
+Once the environment is set up, you can build the project with:
+
+```
+cmake -Ddeepptr_BUILD_EXAMPLES=1 -B build -G "Ninja Multi-Config"
+cmake --build build --config Debug
+```
