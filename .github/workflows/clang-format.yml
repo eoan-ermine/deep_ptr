@@ -1,0 +1,29 @@
+name: clang-format
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '**/*.md'
+  pull_request:
+    branches:
+      - master
+    paths-ignore:
+      - '**/*.md'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check with clang-format
+    - uses: actions/checkout@v4
+    - uses: eoan-ermine/clang-format-lint-action@master
+      with:
+        source: '.'
+        exclude: ''
+        extensions: 'h,hpp,cpp'
+        clangFormatVersion: 22
+        style: file
+        inplace: True
