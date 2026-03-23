@@ -1,0 +1,30 @@
+name: clang-format
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '**/*.md'
+  pull_request:
+    branches:
+      - master
+    paths-ignore:
+      - '**/*.md'
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install clang-format
+      run: pip install clang-format==22.1.1
+
+    - name: Run clang-format check
+      run: |
+        find . \( -name '*.cpp' -o -name '*.hpp' -o -name '*.h' \) -print0 | \
+          xargs -0 clang-format --dry-run --Werror
