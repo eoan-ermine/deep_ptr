@@ -1,3 +1,5 @@
+#pragma once
+
 #include <tuple>
 
 template <typename... Ts> struct deep_ptr {
