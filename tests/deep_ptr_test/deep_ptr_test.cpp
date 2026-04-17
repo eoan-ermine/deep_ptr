@@ -10,7 +10,7 @@ struct A {
   } b;
 };
 
-TEST_CASE("testing the type deep_ptr::get return value") {
+TEST_CASE("testing the type of deep_ptr::get return value") {
   A obj;
   deep_ptr<decltype(&A::b), decltype(&A::B::p)> ptr{&A::b, &A::B::p};
   CHECK(std::is_same<int &, decltype(ptr.get(obj))>::value);
